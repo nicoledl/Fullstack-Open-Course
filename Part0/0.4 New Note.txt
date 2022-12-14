@@ -1,0 +1,25 @@
+title 0.4: New Note
+
+actor user
+note over browser 
+Before user action, the 
+page make HTTP GET 
+requests of HTML code, 
+css file, js file and json data.
+end note
+user->browser: Clicks submit button
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: User input was added in notes
+note over browser
+Reload note page
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: Send updated data.json
+note left of server
+send list notes
+end note
+browser->user:render the page updated

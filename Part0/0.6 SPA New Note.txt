@@ -1,0 +1,19 @@
+title 0.6: SPA New Note
+
+actor user
+note over browser 
+Before user action, the 
+page make HTTP GET 
+requests of HTML code, 
+css file, js file and json data.
+end note
+user->browser: Clicks submit button
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note left of  server
+Request using AJAX
+end note
+note over server
+User input was added in data.json
+end note
+server-->user:Render the new note to list
+
